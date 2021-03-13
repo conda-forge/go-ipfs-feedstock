@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 set -eux
 
+if [[ $(uname) = "Darwin" ]]; then
+    export LDFLAGS="${LDFLAGS} -L$PREFIX/lib -Wl,-rpath,$PREFIX/lib"
+fi
+
 export GOPATH="$( pwd )"
 export CGO_ENABLED=1
 export CGO_CFLAGS="${CFLAGS}"
