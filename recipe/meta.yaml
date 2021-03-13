@@ -100,7 +100,7 @@ source:
 
 build:
   number: 0
-  skip: true  # [osx]
+  skip: true
 
 requirements:
   build:
