@@ -1,5 +1,5 @@
 {% set name = "go-ipfs" %}
-{% set version = "0.8.0" %}
+{% set version = "0.9.0" %}
 {% set gomodule = "github.com/ipfs/" ~ name %}
 {% set rawgit = "https://raw.githubusercontent.com" %}
 {% set ext = "extra_licenses/github.com" %}
@@ -11,7 +11,7 @@ package:
 source:
   - folder: src/{{ gomodule }}
     url: https://{{ gomodule }}/releases/download/v{{ version }}/{{ name }}-source.tar.gz
-    sha256: b8adfe124af900cea69869a31528f5468b66e696c7eb9ec161494ff41dfd584c
+    sha256: 6e19cdf6eba342edb0479cefbaca3f492003f35b329acadfe1c0a016b875cebb
 
   # TODO: remove licenses as they become discoverable by go-licenses
   - fn: {{ version }}-go-base36-LICENSE.md
@@ -143,7 +143,7 @@ about:
     # these have since added license files, or have upstream PRs to do so
     - extra_licenses/
 
-  summary: 'IPFS implementation in Go'
+  summary: IPFS implementation in Go
 
   description: |
     IPFS is a global, versioned, peer-to-peer filesystem. It combines good ideas
