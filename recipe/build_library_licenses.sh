@@ -4,7 +4,7 @@ set -eux
 export LIBRARY_LICENSES_PATH="$SRC_DIR/library_licenses/"
 
 go-licenses save \
-    "github.com/ipfs/go-ipfs/cmd/ipfs" \
+    "." \
     --save_path "$LIBRARY_LICENSES_PATH" \
     2>&1 \
     | tee "$SRC_DIR/go-licenses.log" \
