@@ -9,6 +9,10 @@ export CGO_LDFLAGS="${LDFLAGS}"
 export GOFLAGS="-buildmode=pie -trimpath -ldflags=-linkmode=external -mod=vendor -modcacherw"
 export GOTAGS="openssl"
 
+if [[ $(uname) == Darwin ]]; then
+  export LDFLAGS="${LDFLAGS} -Wl,-rpath,${PREFIX}/lib"
+fi
+
 module='github.com/ipfs/go-ipfs'
 
 make -C "src/${module}" install nofuse
