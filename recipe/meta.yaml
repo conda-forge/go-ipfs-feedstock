@@ -11,7 +11,7 @@ package:
 source:
   - folder: src/{{ gomodule }}
     url: https://{{ gomodule }}/releases/download/v{{ version }}/{{ name }}-source.tar.gz
-    sha256: a247c8c4da05a09671d560967bfe8d71887053e6733b29f4d60f011ad5cedd44
+    sha256: 5b21f96ceb58f0baef810a653924708a7c6ee6349f6c819d6a12fabd8a4fd84e
 
   # TODO: remove licenses as they become discoverable by go-licenses
   - fn: {{ version }}-go-base36-LICENSE.md
