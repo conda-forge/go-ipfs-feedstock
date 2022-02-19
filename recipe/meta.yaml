@@ -104,7 +104,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-    - {{ compiler('go-cgo') }} # [unix]
+    - {{ compiler('cgo') }} # [unix]
     - {{ compiler('go') }}  # [win]
     - posix  # [win]
     - go-licenses
