@@ -6,6 +6,8 @@ c_compiler:
 - clang
 c_compiler_version:
 - '12'
+cgo_compiler:
+- go-cgo >=1.15.2
 channel_sources:
 - conda-forge
 channel_targets:
