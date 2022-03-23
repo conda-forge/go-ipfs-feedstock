@@ -14,5 +14,7 @@ module='github.com/ipfs/go-ipfs'
 make -C "src/${module}" install nofuse
 
 pushd "src/${module}"
+    mkdir -p ${PREFIX}/bin
+    cp cmd/ipfs/ipfs ${PREFIX}/bin
     bash $RECIPE_DIR/build_library_licenses.sh
 popd
