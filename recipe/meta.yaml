@@ -1,5 +1,5 @@
 {% set name = "go-ipfs" %}
-{% set version = "0.12.2" %}
+{% set version = "0.13.1" %}
 {% set gomodule = "github.com/ipfs/" ~ name %}
 {% set rawgit = "https://raw.githubusercontent.com" %}
 {% set ext = "extra_licenses/github.com" %}
@@ -11,7 +11,7 @@ package:
 source:
   - folder: src/{{ gomodule }}
     url: https://{{ gomodule }}/releases/download/v{{ version }}/{{ name }}-source.tar.gz
-    sha256: eba34d2cc49f7811d087f4259c44c1fecb2b6bd08a6c3fa3b5a26e5fed78c74d
+    sha256: 906b6a15be05c71f66c43a97f184aa9d8f3be6c53bd29ccbd81c16050839b135
 
   # TODO: remove licenses as they become discoverable by go-licenses
   - fn: {{ version }}-go-base36-LICENSE.md
