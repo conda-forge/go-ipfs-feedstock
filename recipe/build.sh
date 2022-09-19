@@ -9,6 +9,13 @@ export CGO_LDFLAGS="${LDFLAGS}"
 export GOFLAGS="-buildmode=pie -trimpath -ldflags=-linkmode=external -mod=vendor -modcacherw"
 export GOTAGS="openssl"
 
+uname
+
+if [ $(uname) == Darwin ]; then
+    export CGO_CFLAGS="${CGO_CFLAGS} -I${PREFIX}/include/"
+    export CGO_LDFLAGS="${CGO_LDFLAGS} -L${PREFIX}/lib/"
+fi
+
 module='github.com/ipfs/kubo'
 
 make -C "src/${module}" install nofuse
