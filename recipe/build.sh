@@ -12,8 +12,8 @@ export GOTAGS="openssl"
 uname
 
 if [ $(uname) == Darwin ]; then
-    export CGO_CFLAGS="${CGO_CFLAGS} -I${PREFIX}/include/"
-    export CGO_LDFLAGS="${CGO_LDFLAGS} -L${PREFIX}/lib/"
+    export CGO_CFLAGS="-I${PREFIX}/include/ ${CGO_CFLAGS}"
+    export CGO_LDFLAGS="-L${PREFIX}/lib/ ${CGO_LDFLAGS}"
 fi
 
 module='github.com/ipfs/kubo'
