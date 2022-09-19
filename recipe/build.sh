@@ -9,7 +9,7 @@ export CGO_LDFLAGS="${LDFLAGS}"
 export GOFLAGS="-buildmode=pie -trimpath -ldflags=-linkmode=external -mod=vendor -modcacherw"
 export GOTAGS="openssl"
 
-module='github.com/ipfs/go-ipfs'
+module='github.com/ipfs/kubo'
 
 make -C "src/${module}" install nofuse
 
