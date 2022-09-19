@@ -25,6 +25,7 @@ requirements:
     - posix  # [win]
     - go-licenses
     - make  # [unix]
+    - openssl {{ openssl }}  # [osx]
   host:
     - openssl  # [unix]
   run_constrained:
