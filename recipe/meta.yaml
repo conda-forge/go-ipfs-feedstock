@@ -17,7 +17,10 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-    - {{ compiler('cgo') }}  # [unix]
+    # TODO: see https://github.com/conda-forge/go-feedstock/issues/141
+    # - {{ compiler('cgo') }}  # [unix]
+    - go >=1.18  # [unix]
+    - go-cgo >=1.18  # [unix]
     - {{ compiler('go') }}  # [win]
     - posix  # [win]
     - go-licenses
