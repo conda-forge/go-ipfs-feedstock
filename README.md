@@ -1,7 +1,7 @@
 About go-ipfs
 =============
 
-Home: https://ipfs.io
+Home: https://ipfs.tech/
 
 Package license: Apache-2.0 or MIT
 
@@ -9,15 +9,17 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/go-ipfs-feedsto
 
 Summary: IPFS implementation in Go
 
-Development: https://github.com/ipfs/go-ipfs
+Development: https://github.com/ipfs/kubo
 
-Documentation: https://docs.ipfs.io
+Documentation: https://docs.ipfs.tech/
 
-IPFS is a global, versioned, peer-to-peer filesystem. It combines good ideas
-from previous systems such as Git, BitTorrent, Kademlia, SFS, and the Web.
-It is like a single BitTorrent swarm, exchanging git objects. IPFS provides
-an interface as simple as the HTTP web, but with permanence built-in. You
-can also mount the world at /ipfs.
+Kubo (go-ipfs) the earliest and most widely used implementation of IPFS.
+
+It includes:
+  - an IPFS daemon server
+  - extensive command line tooling
+  - an HTTP Gateway (/ipfs/, /ipns/) for serving content to HTTP browsers
+  - an HTTP RPC API (/api/v0) for controlling the daemon node
 
 
 Current build status
@@ -71,7 +73,7 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-go--ipfs-green.svg)](https://anaconda.org/conda-forge/go-ipfs) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/go-ipfs.svg)](https://anaconda.org/conda-forge/go-ipfs) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/go-ipfs.svg)](https://anaconda.org/conda-forge/go-ipfs) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/go-ipfs.svg)](https://anaconda.org/conda-forge/go-ipfs) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-kubo-green.svg)](https://anaconda.org/conda-forge/kubo) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/kubo.svg)](https://anaconda.org/conda-forge/kubo) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/kubo.svg)](https://anaconda.org/conda-forge/kubo) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/kubo.svg)](https://anaconda.org/conda-forge/kubo) |
 
 Installing go-ipfs
 ==================
@@ -83,41 +85,41 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `go-ipfs` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `kubo` can be installed with `conda`:
 
 ```
-conda install go-ipfs
-```
-
-or with `mamba`:
-
-```
-mamba install go-ipfs
-```
-
-It is possible to list all of the versions of `go-ipfs` available on your platform with `conda`:
-
-```
-conda search go-ipfs --channel conda-forge
+conda install kubo
 ```
 
 or with `mamba`:
 
 ```
-mamba search go-ipfs --channel conda-forge
+mamba install kubo
+```
+
+It is possible to list all of the versions of `kubo` available on your platform with `conda`:
+
+```
+conda search kubo --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search kubo --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search go-ipfs --channel conda-forge
+mamba repoquery search kubo --channel conda-forge
 
-# List packages depending on `go-ipfs`:
-mamba repoquery whoneeds go-ipfs --channel conda-forge
+# List packages depending on `kubo`:
+mamba repoquery whoneeds kubo --channel conda-forge
 
-# List dependencies of `go-ipfs`:
-mamba repoquery depends go-ipfs --channel conda-forge
+# List dependencies of `kubo`:
+mamba repoquery depends kubo --channel conda-forge
 ```
 
 
