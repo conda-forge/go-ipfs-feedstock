@@ -29,6 +29,7 @@ requirements:
     - openssl  # [unix]
   run_constrained:
     - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx and x86_64]
+    - go-ipfs >=9000
 
 {% set cid = "/ipfs/QmQPeNsJPyVWPFDVHb77w8G42Fvo15z4bG2X8D2GhfbSXc" %}
 {% set ipfs_args = "-c ./.ipfs-repo --debug" %}
