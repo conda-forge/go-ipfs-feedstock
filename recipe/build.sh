@@ -12,7 +12,6 @@ export GOTAGS="openssl"
 uname
 
 if [ $(uname) == Darwin ]; then
-    export GOFLAGS="-with-libraries ${PREFIX}/lib ${GOFLAGS}"
     export CGO_CFLAGS="-I${PREFIX}/include/ ${CGO_CFLAGS}"
     export CGO_LDFLAGS="-L${PREFIX}/lib/ ${CGO_LDFLAGS}"
 fi
