@@ -13,6 +13,10 @@ uname
 
 module='github.com/ipfs/kubo'
 
+if [ $(uname) == Darwin ]; then
+    sed -i "s|/usr/local/opt/openssl@1.1|${PREFIX}|" vendor/github.com/libp2p/go-openssl/build.go
+fi
+
 make -C "src/${module}" install nofuse
 
 pushd "src/${module}"
