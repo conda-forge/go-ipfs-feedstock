@@ -11,7 +11,7 @@ source:
     url: https://{{ gomodule }}/releases/download/v{{ version }}/{{ name }}-source.tar.gz
     sha256: 1a4398d46d822976cc6c75e4c39bf6ec799f909225da764e9a38d96f3b9a456b
     patches:
-      - recipe/0000-osx-patch-openssl.diff  # [osx]
+      - 0000-osx-openssl-path.patch  # [osx]
 
 build:
   number: 0
