@@ -11,13 +11,11 @@ export GOTAGS="openssl"
 
 uname
 
-if [ $(uname) == Darwin ]; then
-    export CGO_CFLAGS="-I${PREFIX}/include/ ${CGO_CFLAGS}"
-    export CGO_LDFLAGS="-L${PREFIX}/lib/ ${CGO_LDFLAGS}"
-    export PKG_CONFIG_PATH="${PREFIX}/lib/pkgconfig:$PKG_CONFIG_PATH"
-fi
-
 module='github.com/ipfs/kubo'
+
+if [ $(uname) == Darwin ]; then
+    sed -i "s|/usr/local/opt/openssl@1.1|${PREFIX}|" vendor/github.com/libp2p/go-openssl/build.go
+fi
 
 make -C "src/${module}" install nofuse
 
