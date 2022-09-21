@@ -12,7 +12,11 @@ export GOTAGS="openssl"
 module='github.com/ipfs/kubo'
 
 if [ $(uname) == Darwin ]; then
-    sed -ie "s|/usr/local/opt/openssl@1.1|${PREFIX}|g" "src/${module}/vendor/github.com/libp2p/go-openssl/build.go"
+    pushd "src/${module}/vendor/github.com/libp2p/go-openssl"
+        sed -i '' -e "s|/usr/local/opt/openssl@1.1|${PREFIX}|g" build.go
+        sed -i '' -e "s|-I/usr/local/opt/openssl/include||" build.go
+        sed -i '' -e "s|-L/usr/local/opt/openssl/lib||" build.go
+    popd
 fi
 
 make -C "src/${module}" install nofuse
