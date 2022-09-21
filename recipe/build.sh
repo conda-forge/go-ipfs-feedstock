@@ -9,12 +9,10 @@ export CGO_LDFLAGS="${LDFLAGS}"
 export GOFLAGS="-buildmode=pie -trimpath -ldflags=-linkmode=external -mod=vendor -modcacherw"
 export GOTAGS="openssl"
 
-uname
-
 module='github.com/ipfs/kubo'
 
 if [ $(uname) == Darwin ]; then
-    sed -i "s|/usr/local/opt/openssl@1.1|${PREFIX}|" vendor/github.com/libp2p/go-openssl/build.go
+    sed -ie "s|/usr/local/opt/openssl@1.1|${PREFIX}|g" "src/${module}/vendor/github.com/libp2p/go-openssl/build.go"
 fi
 
 make -C "src/${module}" install nofuse
